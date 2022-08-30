@@ -1,6 +1,6 @@
-Task descriotion
+## Task Description
 
-- [Github repo](https://docs.flutter.dev/cookbook)
+- [Github repo](https://github.com/nikolaybiaivanov/join-the-team/tree/feature/mobile-task/mobile-task)
 
 ## Brief
 
