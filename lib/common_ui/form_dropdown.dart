@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jeminny/utils/extentions.dart';
 
-import 'text_styles.dart';
+import '../strings.dart';
+import 'styles.dart';
 
 class FormDropdown extends StatefulWidget {
   FormDropdown({
@@ -59,9 +61,10 @@ class FormDropdownState extends State<FormDropdown>
         children: <Widget>[
           InkWell(
             onTap: () {
-              isShow = !isShow;
-              _runExpandCheck();
-              setState(() {});
+              setState(() {
+                isShow = !isShow;
+                _runExpandCheck();
+              });
             },
             child: Container(
               decoration: const BoxDecoration(
@@ -75,12 +78,14 @@ class FormDropdownState extends State<FormDropdown>
                 children: <Widget>[
                   Expanded(
                       child: Text(
-                    widget.itemSelected ?? 'Select ${widget.hint ?? 'value'}',
-                    style: widget.itemSelected != null
-                        ? TextStyles.body1
-                        : TextStyles.hint,
+                    widget.itemSelected.isNullOrEmpty()
+                        ? Strings.dropdownHint(widget.hint)
+                        : widget.itemSelected!,
+                    style: widget.itemSelected.isNullOrEmpty()
+                        ? TextStyles.hint
+                        : TextStyles.body1,
                   )),
-                  if (widget.itemSelected != null)
+                  if (!widget.itemSelected.isNullOrEmpty())
                     Row(
                       children: [
                         InkWell(

@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:jeminny/utils/extentions.dart';
 
 import '../../models/meeting_model.dart';
 import '../../models/search_model.dart';
@@ -17,22 +18,16 @@ class MeetingsCubit extends Cubit<MeetingsState> {
   Future<void> filterSearches(SearchModel? search) async {
     final meetings = await _repository.fetchFilters();
     var filteredMeetings = meetings
-        .where(
-          (meeting) =>
-              compare(meeting.platform, search?.platform) &&
-              compare(meeting.teamMember, search?.teamMember) &&
-              compare(meeting.customer, search?.customer),
-        )
+        .where((meeting) =>
+            search?.platform.isNullOrEqual(meeting.platform) == true &&
+            search?.teamMember.isNullOrEqual(meeting.teamMember) == true &&
+            search?.customer.isNullOrEqual(meeting.customer) == true)
         .toList();
     if (filteredMeetings.isNotEmpty) {
       emit(MeetingsLoaded(filteredMeetings));
     } else {
       emit(MeetingsError());
     }
-  }
-
-  bool compare(String? one, String? two) {
-    return two == null || one?.toLowerCase() == two.toLowerCase();
   }
 
   static MeetingsCubit of(BuildContext context) =>

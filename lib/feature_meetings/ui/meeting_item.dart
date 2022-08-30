@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../common_ui/text_styles.dart';
+import '../../common_ui/styles.dart';
 import '../../models/meeting_model.dart';
 import '../../strings.dart';
 import '../../utils/date_time_formatter.dart';
@@ -26,12 +26,12 @@ class MeetingCard extends StatelessWidget {
           ),
           boxShadow: const [
             BoxShadow(
-              color: Color(0x1F190134),
+              color: AppColors.boxShadow,
               offset: Offset(0, 2),
               blurRadius: 10,
             ),
           ],
-          color: AppColors.grey00,
+          color: Colors.white,
         ),
         margin: const EdgeInsets.symmetric(
           horizontal: 8,
@@ -54,7 +54,7 @@ class MeetingCard extends StatelessWidget {
                       ),
                     ),
                     CircleAvatar(
-                      backgroundImage: NetworkImage(meeting.userPhoto ?? ''),
+                      backgroundImage: NetworkImage(meeting.userPhoto),
                       radius: 20,
                     ),
                   ],
@@ -63,12 +63,12 @@ class MeetingCard extends StatelessWidget {
                 Text(
                     Strings.meetingSubtitle(
                       dateTime1.format(
-                        DateTime.parse(meeting.noteTakerAddedOn ?? ''),
+                        DateTime.parse(meeting.noteTakerAddedOn),
                       ),
                     ),
                     style: TextStyles.caption),
                 const SizedBox(height: 10),
-                Text(dateTime1.format(DateTime.parse(meeting.createdAt ?? '')),
+                Text(dateTime1.format(DateTime.parse(meeting.createdAt)),
                     textAlign: TextAlign.end, style: TextStyles.caption),
                 const SizedBox(height: 10),
                 Row(
@@ -84,7 +84,7 @@ class MeetingCard extends StatelessWidget {
                       icon: Icons.slow_motion_video,
                       count: 5,
                     ),
-                    Text(meeting.timeAgo ?? '', style: TextStyles.caption),
+                    Text(meeting.timeAgo, style: TextStyles.caption),
                   ],
                 )
               ],

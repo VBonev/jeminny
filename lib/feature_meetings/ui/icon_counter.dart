@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../common_ui/text_styles.dart';
+import '../../common_ui/styles.dart';
 
 class IconCounter extends StatelessWidget {
   const IconCounter({

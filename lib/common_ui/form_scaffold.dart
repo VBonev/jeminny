@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../assets.dart';
+import '../strings.dart';
 
 class FormsScaffold extends StatelessWidget {
   const FormsScaffold({Key? key, required this.body}) : super(key: key);
@@ -14,8 +15,8 @@ class FormsScaffold extends StatelessWidget {
             leading: IconButton(
               icon: const Icon(Icons.messenger_outline),
               onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Hey there!'),
+                 SnackBar(
+                  content: Text(Strings.dummyText),
                 ),
               ),
             ),
@@ -31,8 +32,8 @@ class FormsScaffold extends StatelessWidget {
                   iconSize: 40,
                   icon: Image.asset(icProfile),
                   onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('My profile!'),
+                     SnackBar(
+                      content: Text(Strings.dummyText),
                     ),
                   ),
                 ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../common_ui/form_scaffold.dart';
-import '../../common_ui/text_styles.dart';
+import '../../common_ui/styles.dart';
 import '../../models/search_model.dart';
 import '../bloc/meetings_cubit.dart';
 import '../repository/meeting_repository.dart';
@@ -28,7 +28,7 @@ class MeetingsPage extends StatelessWidget {
               return const Center(
                 child: Text(
                   'No such meetings',
-                  style: TextStyles.headline4,
+                  style: TextStyles.errorStyle,
                 ),
               );
             } else if (state is MeetingsLoaded) {
