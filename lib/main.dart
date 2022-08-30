@@ -14,19 +14,16 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-
-    return MaterialApp(
-      title: Strings.appName,
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
-      home: BlocProvider(
-        create: (context) => FilterCubit(
-          const FilterRepository(),
-        )..init(),
-        child: FilterSearchPage(),
-      ),
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(
+        title: Strings.appName,
+        theme: ThemeData(
+          primarySwatch: Colors.pink,
+        ),
+        home: BlocProvider(
+          create: (context) => FilterCubit(
+            const FilterRepository(),
+          )..init(),
+          child: FilterSearchPage(),
+        ),
+      );
 }

@@ -12,11 +12,3 @@ SearchModel _$SearchModelFromJson(Map<String, dynamic> json) => SearchModel(
       teamMember: json['teamMember'] as String?,
       customer: json['customer'] as String?,
     );
-
-Map<String, dynamic> _$SearchModelToJson(SearchModel instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'platform': instance.platform,
-      'teamMember': instance.teamMember,
-      'customer': instance.customer,
-    };

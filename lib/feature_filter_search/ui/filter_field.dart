@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 
 import '../../common_ui/form_dropdown.dart';
+import '../../common_ui/styles.dart';
 
 class FilterField extends StatelessWidget {
   const FilterField({
@@ -24,7 +24,7 @@ class FilterField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(fontSize: 18),
+          style: TextStyles.body1,
         ),
         const SizedBox(height: 10),
         FormDropdown(

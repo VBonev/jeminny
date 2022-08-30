@@ -22,7 +22,7 @@ class SubmitButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
-        primary: isFormValid == true ? Colors.white : AppColors.grey80,
+        primary: isFormValid == true ? Colors.white : AppColors.grey70,
         textStyle: TextStyles.body1,
         backgroundColor:
             isFormValid == true ? AppColors.pink : AppColors.grey40,

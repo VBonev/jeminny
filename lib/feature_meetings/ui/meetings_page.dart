@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../common_ui/form_scaffold.dart';
+import '../../common_ui/app_scaffold.dart';
 import '../../common_ui/styles.dart';
 import '../../models/search_model.dart';
+import '../../strings.dart';
 import '../bloc/meetings_cubit.dart';
 import '../repository/meeting_repository.dart';
 import 'meeting_item.dart';
@@ -21,13 +22,16 @@ class MeetingsPage extends StatelessWidget {
       create: (context) => MeetingsCubit(
         const MeetingsRepository(),
       )..filterSearches(selectedSearch),
-      child: FormsScaffold(
+      child: AppScaffold(
+        onTap: () {
+          Navigator.of(context).pop();
+        },
         body: BlocBuilder<MeetingsCubit, MeetingsState>(
           builder: (context, state) {
             if (state is MeetingsError) {
-              return const Center(
+              return Center(
                 child: Text(
-                  'No such meetings',
+                  Strings.meetingsError,
                   style: TextStyles.errorStyle,
                 ),
               );
@@ -44,7 +48,7 @@ class MeetingsPage extends StatelessWidget {
               alignment: Alignment.center,
               margin: const EdgeInsets.only(top: 20),
               child: const CircularProgressIndicator(
-                color: Color(0xffFF3E80),
+                color: AppColors.pink,
               ),
             );
           },

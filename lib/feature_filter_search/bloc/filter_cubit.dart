@@ -12,6 +12,7 @@ class FilterCubit extends Cubit<FilterState> {
   final FilterRepository _repository;
 
   Future<void> init() async {
+    emit(const FilterLoading());
     final filters = await _repository.fetchFilters();
     if (filters.isNotEmpty) {
       emit(FilterLoaded(filters, null));

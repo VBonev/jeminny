@@ -16,15 +16,3 @@ MeetingModel _$MeetingModelFromJson(Map<String, dynamic> json) => MeetingModel(
       teamMember: json['teamMember'] as String,
       customer: json['customer'] as String,
     );
-
-Map<String, dynamic> _$MeetingModelToJson(MeetingModel instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'userPhoto': instance.userPhoto,
-      'notetakerAddedOn': instance.noteTakerAddedOn,
-      'createdAt': instance.createdAt,
-      'timeAgo': instance.timeAgo,
-      'platform': instance.platform,
-      'teamMember': instance.teamMember,
-      'customer': instance.customer,
-    };

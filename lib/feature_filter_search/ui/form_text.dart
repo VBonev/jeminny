@@ -31,7 +31,7 @@ class _FormTextState extends State<FormText> {
               color: AppColors.grey40,
               borderRadius: BorderRadius.all(Radius.circular(12)),
             ),
-            child: TextFormField(
+            child: TextField(
               onChanged: (value) {
                 widget.onChanged.call(value);
                 setState(() {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jeminny/utils/extentions.dart';
+import 'package:jeminny/utils/extensions.dart';
 
 import '../strings.dart';
 import 'styles.dart';
@@ -136,7 +136,7 @@ class FormDropdownState extends State<FormDropdown>
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(12)),
             border: Border.all(
-              color: const Color(0xffE0E0E0),
+              color: Colors.grey,
               width: 1,
             ),
           ),

@@ -21,7 +21,7 @@ class TextStyles {
 
   static const caption = TextStyle(
     fontWeight: FontWeight.w400,
-    color: AppColors.grey80,
+    color: AppColors.grey70,
     fontSize: 13,
   );
 
@@ -36,7 +36,6 @@ class AppColors {
   static const variationsNegative50 = Color(0xffFB303C);
   static const pink = Color(0xffFF3F82);
   static const grey90 = Color(0xff424242);
-  static const grey80 = Color(0xff616161);
   static const grey70 = Color(0xff757575);
   static const grey40 = Color(0xffE0E0E0);
   static const boxShadow =  Color(0x1F190134);
