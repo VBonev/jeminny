@@ -1,6 +1,4 @@
-## Task Description
 
-- [Github repo](https://github.com/nikolaybiaivanov/join-the-team/tree/feature/mobile-task/mobile-task)
 
 ## Brief
 
